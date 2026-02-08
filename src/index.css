@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 12% 18%;
+    --foreground: 0 0% 100%;
+
+    --card: 220 12% 14%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 220 12% 14%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 280 55% 67%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 12% 22%;
+    --secondary-foreground: 220 10% 75%;
+
+    --muted: 220 12% 22%;
+    --muted-foreground: 220 10% 70%;
+
+    --accent: 280 55% 67%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 12% 28%;
+    --input: 220 12% 28%;
+    --ring: 280 55% 67%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 12% 14%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 280 55% 67%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 12% 22%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 12% 28%;
+    --sidebar-ring: 280 55% 67%;
+
+    /* Custom tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(280 55% 67%), hsl(320 60% 55%));
+    --gradient-subtle: linear-gradient(180deg, hsl(220 12% 18%), hsl(220 12% 14%));
+    --glow-primary: 0 0 30px hsl(280 55% 67% / 0.3);
+    --status-active: 160 60% 55%;
+  }
+
+  .dark {
+    --background: 220 12% 18%;
+    --foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  ::selection {
+    background: hsl(280 55% 67% / 0.3);
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .border-gradient {
+    position: relative;
+    border: 1px solid transparent;
+    background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+                var(--gradient-primary) border-box;
+  }
+
+  .glow-box {
+    box-shadow: var(--glow-primary);
+  }
+
+  .hash-accent {
+    @apply text-primary font-bold;
+  }
+
+  .section-title {
+    @apply text-2xl md:text-3xl font-semibold flex items-center gap-2;
+  }
+
+  .dots-pattern {
+    background-image: radial-gradient(circle, hsl(var(--muted-foreground)) 1px, transparent 1px);
+    background-size: 12px 12px;
+  }
+
+  .geometric-square {
+    @apply border border-primary absolute;
+  }
+
+  .link-underline {
+    @apply relative;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px bg-primary transition-all duration-300;
+  }
+
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  .animate-typing {
+    overflow: hidden;
+    border-right: 2px solid hsl(var(--primary));
+    white-space: nowrap;
+    animation: typing 3s steps(30) infinite, blink 0.7s step-end infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes typing {
+    0%, 100% { width: 0; }
+    50% { width: 100%; }
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
