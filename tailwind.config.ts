@@ -99,6 +99,6 @@ export default {
         "slide-in-right": "slide-in-right 0.6s ease-out forwards",
       },
     },
-  },
+  }, 
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
