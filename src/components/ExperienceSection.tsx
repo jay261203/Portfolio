@@ -4,30 +4,21 @@ import { Briefcase, Calendar, MapPin } from "lucide-react";
 const experiences = [
   {
     id: 1,
-    role: "AI Engineer",
-    company: "TechVision AI",
-    location: "San Francisco, CA",
-    duration: "Jan 2024 - Present",
-    description: "Leading development of machine learning models for computer vision applications. Implementing deep learning solutions using PyTorch and TensorFlow.",
-    technologies: ["Python", "PyTorch", "TensorFlow", "AWS", "Docker"],
+    role: "Software Engineer",
+    company: "Mobilions Labs Private Limited",
+    location: "Ahmedabad, Gujarat",
+    duration: "September 2025 - Present",
+    description: "Developed and maintained a retrieval-augmented generation (RAG) pipeline for context-aware document Q&A, improving response accuracy by 30%. Automated agent systems and blog generation workflows using n8n tool.",
+    technologies: ["Python", "RAG", "LLMs", "n8n", "AI Agents"],
   },
   {
     id: 2,
-    role: "Software Developer",
-    company: "InnovateTech Solutions",
-    location: "New York, NY",
-    duration: "Jun 2022 - Dec 2023",
-    description: "Developed full-stack web applications using React and Node.js. Collaborated with cross-functional teams to deliver scalable solutions.",
-    technologies: ["React", "Node.js", "TypeScript", "PostgreSQL", "MongoDB"],
-  },
-  {
-    id: 3,
-    role: "Machine Learning Intern",
-    company: "DataDriven Labs",
-    location: "Boston, MA",
-    duration: "Jan 2022 - May 2022",
-    description: "Assisted in building predictive models for customer behavior analysis. Gained hands-on experience with data preprocessing and model optimization.",
-    technologies: ["Python", "Scikit-learn", "Pandas", "Jupyter", "SQL"],
+    role: "Intern",
+    company: "Exposys Data Labs",
+    location: "Remote",
+    duration: "May 2023 - July 2023",
+    description: "Gained industry exposure in web technologies and data-driven development practices. Developed practical understanding of complete software development lifecycles, including collaboration and version control.",
+    technologies: ["Web Development", "Git", "SDLC", "Collaboration Tools"],
   },
 ];
 
@@ -59,18 +50,16 @@ const ExperienceSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className={`relative flex flex-col md:flex-row gap-8 mb-12 ${
-                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              }`}
+              className={`relative flex flex-col md:flex-row gap-8 mb-12 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                }`}
             >
               {/* Timeline dot */}
               <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-lg shadow-primary/50" />
 
               {/* Content card */}
               <div
-                className={`ml-8 md:ml-0 md:w-1/2 ${
-                  index % 2 === 0 ? "md:pr-12" : "md:pl-12"
-                }`}
+                className={`ml-8 md:ml-0 md:w-1/2 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"
+                  }`}
               >
                 <div className="group relative p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
                   {/* Glow effect */}
